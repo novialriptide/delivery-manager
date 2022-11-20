@@ -9,7 +9,7 @@ This video game was created in under 4 days for the Creation of Games Society's 
 1. You got _x_ amount of time to make _x_ amount of money!
 2. **Brown** paths means **fragile** packages will start to deteriorate!
 3. Some packages can't go _x_ amounts of distance!
-4. Good luck!
+4. Click on trucks (the white dots) to heal them!
 
 ## Build from Source
 1. Install the [Python 3.10](https://python.org/) or newer
