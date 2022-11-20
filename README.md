@@ -29,6 +29,7 @@ This video game was created in under 4 days for the Creation of Games Society's 
  - All programming has been done by [Andrew Hong](https://github.com/novialriptide)
  - pygame by [the pygame contributing community](https://github.com/pygame/pygame)
  - `src/audio/fanfare.mp3` by [pixabay.com](https://pixabay.com/)
+ - `src/audio/music1.mp3` by [Cyber Squib](https://itch.io/profile/cyber-squib) originally from [BiomeSwitch](https://github.com/novialriptide/BiomeSwitch)
  - `src/audio/change_truck_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/gameover.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/select_node_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
