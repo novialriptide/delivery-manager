@@ -3,7 +3,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A delivery management simulator where you must manage packages and delivery trucks.\
-This video game was created in under 4 days for the Creation of Games Society's Scarlet Game Jam hosted from Rutgers University - New Brunswick.
+This video game was created in under 4 days for the [Rutgers Creation of Games Society's Scarlet Game Jam](https://itch.io/jam/scarlet-game-jam-fall-2022).
 
 ## How to play
 1. You got _x_ amount of time to make _x_ amount of money!
