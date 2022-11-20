@@ -48,13 +48,13 @@ screen = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT), flags=pygame.SRCALPHA)
 clock = pygame.time.Clock()
 
 # Sounds
-fanfare_snd = pygame.mixer.Sound("src/audio/fanfare.mp3")
-chg_trk_snd = pygame.mixer.Sound("src/audio/change_truck_beep.wav")
-gameover_snd = pygame.mixer.Sound("src/audio/gameover.wav")
-repair_pkg_snd = pygame.mixer.Sound("src/audio/repair_package.wav")
-slt_node_snd = pygame.mixer.Sound("src/audio/select_node_beep.wav")
-srt_delivery_snd = pygame.mixer.Sound("src/audio/start_delivery_beep.wav")
-music1 = pygame.mixer.Sound("src/audio/music1.mp3")
+fanfare_snd = pygame.mixer.Sound("audio/fanfare.mp3")
+chg_trk_snd = pygame.mixer.Sound("audio/change_truck_beep.wav")
+gameover_snd = pygame.mixer.Sound("audio/gameover.wav")
+repair_pkg_snd = pygame.mixer.Sound("audio/repair_package.wav")
+slt_node_snd = pygame.mixer.Sound("audio/select_node_beep.wav")
+srt_delivery_snd = pygame.mixer.Sound("audio/start_delivery_beep.wav")
+music1 = pygame.mixer.Sound("audio/music1.mp3")
 
 # Fonts
 size20font = pygame.freetype.Font(FONT_PATH_REGULAR, 20)
