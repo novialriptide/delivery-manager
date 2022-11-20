@@ -14,6 +14,7 @@ from models.package import *
 from models.truck import *
 from models.ui.basebutton import *
 import pygame
+from pygame.freetype import pg_freetype
 import time
 import sys
 
@@ -38,7 +39,7 @@ DRAW_LOSE_SCREEN = False
 
 # Initializing pygame
 pygame.init()
-pygame.freetype.init()
+pg_freetype.init()
 pygame.mixer.init()
 _window = pygame.display.set_mode(
     pygame.Vector2(SCREEN_WIDTH, SCREEN_HEIGHT) * screen_scale, flags=pygame.RESIZABLE
@@ -57,12 +58,12 @@ srt_delivery_snd = pygame.mixer.Sound("audio/start_delivery_beep.wav")
 music1 = pygame.mixer.Sound("audio/music1.mp3")
 
 # Fonts
-size20font = pygame.freetype.Font(FONT_PATH_REGULAR, 20)
-size30font = pygame.freetype.Font(FONT_PATH_REGULAR, 30)
-size40font = pygame.freetype.Font(FONT_PATH_REGULAR, 40)
-size50font = pygame.freetype.Font(FONT_PATH_REGULAR, 50)
-size60font = pygame.freetype.Font(FONT_PATH_REGULAR, 60)
-size70font = pygame.freetype.Font(FONT_PATH_REGULAR, 70)
+size20font = pg_freetype.Font(FONT_PATH_REGULAR, 20)
+size30font = pg_freetype.Font(FONT_PATH_REGULAR, 30)
+size40font = pg_freetype.Font(FONT_PATH_REGULAR, 40)
+size50font = pg_freetype.Font(FONT_PATH_REGULAR, 50)
+size60font = pg_freetype.Font(FONT_PATH_REGULAR, 60)
+size70font = pg_freetype.Font(FONT_PATH_REGULAR, 70)
 
 # Map Level Creation
 map_center = pygame.Vector2(SCREEN_WIDTH, SCREEN_HEIGHT) / 2
