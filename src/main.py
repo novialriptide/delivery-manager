@@ -449,6 +449,7 @@ while True:
 
     # Win Logic Implementation
     if balance >= MONEY_GOAL:
+        DRAW_MAIN_WORLD = False
         screen.fill((0, 255, 0))
         text_surf, text_rect = size40font.render("You won!", (0, 0, 0))
         screen.blit(
@@ -459,6 +460,7 @@ while True:
 
     # Bankrupt Implementation
     if balance <= 0:
+        DRAW_MAIN_WORLD = False
         screen.fill((255, 0, 0))
         text_surf1, text_rect1 = size60font.render("You lost.", (0, 0, 0))
         screen.blit(
@@ -476,6 +478,7 @@ while True:
 
     # Ran out of Time Logic Implementation
     if goal_time - time.time() <= 0:
+        DRAW_MAIN_WORLD = False
         screen.fill((255, 0, 0))
         text_surf1, text_rect1 = size60font.render("You lost.", (0, 0, 0))
         screen.blit(
