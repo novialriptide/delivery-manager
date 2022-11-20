@@ -6,10 +6,12 @@ A delivery management simulator where you must manage packages and delivery truc
 This video game was created in under 4 days for the [Rutgers Creation of Games Society's Scarlet Game Jam](https://itch.io/jam/scarlet-game-jam-fall-2022).
 
 ## How to play
-1. You got _x_ amount of time to make _x_ amount of money!
-2. **Brown** paths means **fragile** packages will start to deteriorate!
-3. Some packages can't go _x_ amounts of distance!
-4. Click on trucks (the white dots) to heal them!
+1. You can also click and drag the destinations!
+2. You got _x_ amount of time to make _x_ amount of money!
+3. **Brown** paths means **fragile** packages will start to deteriorate!
+4. Some packages can't go _x_ amounts of distance!
+5. Click on trucks (the white dots) to heal them!
+6. Purple circles are your package's destination.
 
 ## Build from Source
 1. Install the [Python 3.10](https://python.org/) or newer
@@ -32,6 +34,7 @@ This video game was created in under 4 days for the [Rutgers Creation of Games S
  - `src/audio/music1.mp3` by [Cyber Squib](https://itch.io/profile/cyber-squib) originally from [BiomeSwitch](https://github.com/novialriptide/BiomeSwitch)
  - `src/audio/change_truck_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/gameover.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
+ - `src/audio/repair_package.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/select_node_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/start_delivery_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/fonts/SpaceMono-Bold.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)

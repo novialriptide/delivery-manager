@@ -51,6 +51,7 @@ clock = pygame.time.Clock()
 fanfare_snd = pygame.mixer.Sound("src/audio/fanfare.mp3")
 chg_trk_snd = pygame.mixer.Sound("src/audio/change_truck_beep.wav")
 gameover_snd = pygame.mixer.Sound("src/audio/gameover.wav")
+repair_pkg_snd = pygame.mixer.Sound("src/audio/repair_package.wav")
 slt_node_snd = pygame.mixer.Sound("src/audio/select_node_beep.wav")
 srt_delivery_snd = pygame.mixer.Sound("src/audio/start_delivery_beep.wav")
 music1 = pygame.mixer.Sound("src/audio/music1.mp3")
@@ -85,7 +86,7 @@ for x in range(INIT_DELIVERY_TRUCKS):
 
 def add_package():
     global delivery_orders
-    cost = random.randint(100, 6000)
+    cost = random.randint(*PACKAGE_COST_RANGE)
     temp_nodes = copy.copy(map_level.nodes)
     temp_nodes.remove(hq_node)
     fragile = 0.2 > random.random()
@@ -193,6 +194,7 @@ while True:
     mouse_pos = pygame.Vector2(pygame.mouse.get_pos()) / screen_scale
 
     if DRAW_MAIN_WORLD:
+        # Draw Background
         screen.fill((50, 50, 50))
 
         # Draw Node Connections
@@ -456,10 +458,6 @@ while True:
                 + pygame.Vector2(0, -120),
             )
 
-    # Title Screen Draw
-    if DRAW_TITLE_SCREEN:
-        screen.fill((0, 0, 0))
-
     # Win Logic Implementation
     if balance >= MONEY_GOAL:
         DRAW_MAIN_WORLD = False
@@ -483,7 +481,9 @@ while True:
             pygame.Vector2(screen.get_size()) / 2
             - pygame.Vector2(text_surf1.get_size()) / 2,
         )
-        text_surf2, text_rect2 = size40font.render("You're bankrupt. Please reopen your game to try again.", (0, 0, 0))
+        text_surf2, text_rect2 = size40font.render(
+            "You're bankrupt. Please reopen your game to try again.", (0, 0, 0)
+        )
         screen.blit(
             text_surf2,
             pygame.Vector2(screen.get_size()) / 2
@@ -502,7 +502,9 @@ while True:
             pygame.Vector2(screen.get_size()) / 2
             - pygame.Vector2(text_surf1.get_size()) / 2,
         )
-        text_surf2, text_rect2 = size40font.render("You ran out of time. Please reopen your game to try again.", (0, 0, 0))
+        text_surf2, text_rect2 = size40font.render(
+            "You ran out of time. Please reopen your game to try again.", (0, 0, 0)
+        )
         screen.blit(
             text_surf2,
             pygame.Vector2(screen.get_size()) / 2
@@ -553,6 +555,7 @@ while True:
                         t.pos - camera_pos,
                         NODE_DRAW_RADIUS * node_size_mod * 1.5,
                     ):
+                        repair_pkg_snd.play()
                         t.package.health += CLICK_HEAL
                         balance -= HEAL_COST
 
