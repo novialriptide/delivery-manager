@@ -14,7 +14,7 @@ from models.package import *
 from models.truck import *
 from models.ui.basebutton import *
 import pygame
-from pygame.freetype import pg_freetype
+from pygame import freetype as pg_freetype
 import time
 import sys
 
