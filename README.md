@@ -18,4 +18,22 @@ This video game was created in under 4 days for the Creation of Games Society's 
 4. Type `python src/main.py`
 
 ## Images
+<details>
+<summary>Click to view images</summary>
+
 ![image info](/images/img1.png)
+
+</details>
+
+## Credits
+ - All programming has been done by [Andrew Hong](https://github.com/novialriptide)
+ - pygame by [the pygame contributing community](https://github.com/pygame/pygame)
+ - `src/audio/fanfare.mp3` by [pixabay.com](https://pixabay.com/)
+ - `src/audio/change_truck_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
+ - `src/audio/gameover.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
+ - `src/audio/select_node_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
+ - `src/audio/start_delivery_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
+ - `src/fonts/SpaceMono-Bold.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)
+ - `src/fonts/SpaceMono-BoldItalic.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)
+ - `src/fonts/SpaceMono-Italic.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)
+ - `src/fonts/SpaceMono-Regular.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)

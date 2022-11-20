@@ -39,12 +39,20 @@ DRAW_LOSE_SCREEN = False
 # Initializing pygame
 pygame.init()
 pygame.freetype.init()
+pygame.mixer.init()
 _window = pygame.display.set_mode(
     pygame.Vector2(SCREEN_WIDTH, SCREEN_HEIGHT) * screen_scale, flags=pygame.RESIZABLE
 )
 pygame.display.set_caption(SCREEN_NAME)
 screen = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT), flags=pygame.SRCALPHA)
 clock = pygame.time.Clock()
+
+# Sounds
+fanfare_snd = pygame.mixer.Sound("src/audio/fanfare.mp3")
+chg_trk_snd = pygame.mixer.Sound("src/audio/change_truck_beep.wav")
+gameover_snd = pygame.mixer.Sound("src/audio/gameover.wav")
+slt_node_snd = pygame.mixer.Sound("src/audio/select_node_beep.wav")
+srt_delivery_snd = pygame.mixer.Sound("src/audio/start_delivery_beep.wav")
 
 # Fonts
 size20font = pygame.freetype.Font(FONT_PATH_REGULAR, 20)
@@ -165,6 +173,8 @@ next_deliverytk_button = NextPackageButton(
 
 class StartDeliveryButton(BaseButton):
     def on_click(self, mouse_pos):
+        global srt_delivery_snd
+        srt_delivery_snd.play()
         start_delivery(delivery_orders[selected_package])
 
 
@@ -450,6 +460,7 @@ while True:
     # Win Logic Implementation
     if balance >= MONEY_GOAL:
         DRAW_MAIN_WORLD = False
+        fanfare_snd.play()
         screen.fill((0, 255, 0))
         text_surf, text_rect = size40font.render("You won!", (0, 0, 0))
         screen.blit(
@@ -461,6 +472,7 @@ while True:
     # Bankrupt Implementation
     if balance <= 0:
         DRAW_MAIN_WORLD = False
+        gameover_snd.play()
         screen.fill((255, 0, 0))
         text_surf1, text_rect1 = size60font.render("You lost.", (0, 0, 0))
         screen.blit(
@@ -468,7 +480,7 @@ while True:
             pygame.Vector2(screen.get_size()) / 2
             - pygame.Vector2(text_surf1.get_size()) / 2,
         )
-        text_surf2, text_rect2 = size40font.render("You're bankrupt.", (0, 0, 0))
+        text_surf2, text_rect2 = size40font.render("You're bankrupt. Please reopen your game to try again.", (0, 0, 0))
         screen.blit(
             text_surf2,
             pygame.Vector2(screen.get_size()) / 2
@@ -479,6 +491,7 @@ while True:
     # Ran out of Time Logic Implementation
     if goal_time - time.time() <= 0:
         DRAW_MAIN_WORLD = False
+        gameover_snd.play()
         screen.fill((255, 0, 0))
         text_surf1, text_rect1 = size60font.render("You lost.", (0, 0, 0))
         screen.blit(
@@ -486,7 +499,7 @@ while True:
             pygame.Vector2(screen.get_size()) / 2
             - pygame.Vector2(text_surf1.get_size()) / 2,
         )
-        text_surf2, text_rect2 = size40font.render("You ran out of time.", (0, 0, 0))
+        text_surf2, text_rect2 = size40font.render("You ran out of time. Please reopen your game to try again.", (0, 0, 0))
         screen.blit(
             text_surf2,
             pygame.Vector2(screen.get_size()) / 2
@@ -567,9 +580,11 @@ while True:
                         # Node Multi Selection Detection
                         elif n in selected_nodes and holdin_shiftdown:
                             selected_nodes.append(n)
+                            slt_node_snd.play()
                             break
 
                         selected_nodes.append(n)
+                        slt_node_snd.play()
 
                         # Connection Path Selection
                         if len(selected_nodes) >= 2 and path_enabled:
