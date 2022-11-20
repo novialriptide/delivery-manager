@@ -178,7 +178,7 @@ start_delivery_button = StartDeliveryButton(
 while True:
     # Game Loop
     mouse_pos = pygame.Vector2(pygame.mouse.get_pos()) / screen_scale
-    
+
     if DRAW_MAIN_WORLD:
         screen.fill((50, 50, 50))
 
@@ -258,7 +258,10 @@ while True:
             screen.blit(dist_text, dist_rect.topleft)
 
         # Add Package
-        if int(goal_time - time.time()) % SECONDS_PER_PACKAGE == 0 and not adding_package:
+        if (
+            int(goal_time - time.time()) % SECONDS_PER_PACKAGE == 0
+            and not adding_package
+        ):
             add_package()
             adding_package = True
         elif int(goal_time - time.time()) % SECONDS_PER_PACKAGE != 0:
@@ -316,7 +319,9 @@ while True:
         # Economy
         if int(goal_time - time.time()) % 2 == 0 and not changing_gas_price:
             gas_price = min(
-                max(base_gas_price, gas_price + random.random() * random.randint(-2, 2)),
+                max(
+                    base_gas_price, gas_price + random.random() * random.randint(-2, 2)
+                ),
                 MAX_GAS_PRICE,
             )
             changing_gas_price = True
@@ -342,7 +347,8 @@ while True:
         )
         screen.blit(gas_text, (25, 25 + bal_rect.height + 10))
         time_text, time_rect = size40font.render(
-            f"Time Left: {int(goal_time - time.time())} {total_dist_str}", (255, 255, 255)
+            f"Time Left: {int(goal_time - time.time())} {total_dist_str}",
+            (255, 255, 255),
         )
         screen.blit(time_text, (25, 25 + gas_rect.height + 10 + bal_rect.height + 10))
 
@@ -371,9 +377,15 @@ while True:
                 screen, button_color / 2, start_delivery_button.rect, border_radius=50
             )
             pygame.draw.rect(
-                screen, button_color, start_delivery_button.rect, width=20, border_radius=50
+                screen,
+                button_color,
+                start_delivery_button.rect,
+                width=20,
+                border_radius=50,
             )
-            text_surf, text_rect = size30font.render("Start Delivery", fgcolor=text_color)
+            text_surf, text_rect = size30font.render(
+                "Start Delivery", fgcolor=text_color
+            )
             screen.blit(
                 text_surf,
                 start_delivery_button.rect.center - pygame.Vector2(text_rect.size) / 2,
@@ -387,10 +399,13 @@ while True:
                 previous_deliverytk_button.rect,
                 border_radius=50,
             )
-            text_surf, text_rect = size30font.render("Previous Package", fgcolor=text_color)
+            text_surf, text_rect = size30font.render(
+                "Previous Package", fgcolor=text_color
+            )
             screen.blit(
                 text_surf,
-                previous_deliverytk_button.rect.center - pygame.Vector2(text_rect.size) / 2,
+                previous_deliverytk_button.rect.center
+                - pygame.Vector2(text_rect.size) / 2,
             )
 
             # Next Delivery Button
@@ -436,24 +451,45 @@ while True:
     if balance >= MONEY_GOAL:
         screen.fill((0, 255, 0))
         text_surf, text_rect = size40font.render("You won!", (0, 0, 0))
-        screen.blit(text_surf, pygame.Vector2(screen.get_size()) / 2 - pygame.Vector2(text_surf.get_size()) / 2)
-
+        screen.blit(
+            text_surf,
+            pygame.Vector2(screen.get_size()) / 2
+            - pygame.Vector2(text_surf.get_size()) / 2,
+        )
 
     # Bankrupt Implementation
     if balance <= 0:
         screen.fill((255, 0, 0))
         text_surf1, text_rect1 = size60font.render("You lost.", (0, 0, 0))
-        screen.blit(text_surf1, pygame.Vector2(screen.get_size()) / 2 - pygame.Vector2(text_surf1.get_size()) / 2)
+        screen.blit(
+            text_surf1,
+            pygame.Vector2(screen.get_size()) / 2
+            - pygame.Vector2(text_surf1.get_size()) / 2,
+        )
         text_surf2, text_rect2 = size40font.render("You're bankrupt.", (0, 0, 0))
-        screen.blit(text_surf2, pygame.Vector2(screen.get_size()) / 2 + pygame.Vector2(0, text_surf1.get_height()) - pygame.Vector2(text_surf2.get_size()) / 2)
+        screen.blit(
+            text_surf2,
+            pygame.Vector2(screen.get_size()) / 2
+            + pygame.Vector2(0, text_surf1.get_height())
+            - pygame.Vector2(text_surf2.get_size()) / 2,
+        )
 
     # Ran out of Time Logic Implementation
     if goal_time - time.time() <= 0:
         screen.fill((255, 0, 0))
         text_surf1, text_rect1 = size60font.render("You lost.", (0, 0, 0))
-        screen.blit(text_surf1, pygame.Vector2(screen.get_size()) / 2 - pygame.Vector2(text_surf1.get_size()) / 2)
+        screen.blit(
+            text_surf1,
+            pygame.Vector2(screen.get_size()) / 2
+            - pygame.Vector2(text_surf1.get_size()) / 2,
+        )
         text_surf2, text_rect2 = size40font.render("You ran out of time.", (0, 0, 0))
-        screen.blit(text_surf2, pygame.Vector2(screen.get_size()) / 2 + pygame.Vector2(0, text_surf1.get_height()) - pygame.Vector2(text_surf2.get_size()) / 2)
+        screen.blit(
+            text_surf2,
+            pygame.Vector2(screen.get_size()) / 2
+            + pygame.Vector2(0, text_surf1.get_height())
+            - pygame.Vector2(text_surf2.get_size()) / 2,
+        )
 
     # Window Ratio Consistency
     temp_screen = pygame.transform.scale(screen, _window.get_size())
