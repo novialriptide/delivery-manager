@@ -37,6 +37,7 @@ This video game was created in under 4 days for the [Rutgers Creation of Games S
  - `src/audio/repair_package.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/select_node_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/audio/start_delivery_beep.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
+ - `src/audio/truck_explode.wav` by [SubspaceAudio](https://opengameart.org/content/512-sound-effects-8-bit-style)
  - `src/fonts/SpaceMono-Bold.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)
  - `src/fonts/SpaceMono-BoldItalic.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)
  - `src/fonts/SpaceMono-Italic.ttf` by [Colophon](https://fonts.google.com/specimen/Space+Mono)

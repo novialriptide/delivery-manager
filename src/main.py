@@ -55,6 +55,7 @@ gameover_snd = pygame.mixer.Sound("audio/gameover.wav")
 repair_pkg_snd = pygame.mixer.Sound("audio/repair_package.wav")
 slt_node_snd = pygame.mixer.Sound("audio/select_node_beep.wav")
 srt_delivery_snd = pygame.mixer.Sound("audio/start_delivery_beep.wav")
+truk_explode_snd = pygame.mixer.Sound("audio/truck_explode.wav")
 music1 = pygame.mixer.Sound("audio/music1.mp3")
 
 # Fonts
@@ -148,6 +149,7 @@ class PreviousPackageButton(BaseButton):
     def on_click(self, mouse_pos):
         global selected_package
         if selected_package > 0:
+            chg_trk_snd.play()
             selected_package -= 1
 
 
@@ -156,6 +158,7 @@ class NextPackageButton(BaseButton):
         global selected_package
         global delivery_orders
         if selected_package < len(delivery_orders) - 1:
+            chg_trk_snd.play()
             selected_package += 1
 
 
@@ -302,6 +305,7 @@ while True:
 
             if t.package.health <= 0:
                 balance -= t.package.cost
+                truk_explode_snd.play()
                 t.reset_delivery()
                 continue
 
