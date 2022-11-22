@@ -13,6 +13,10 @@ This video game was created in under 4 days for the [Rutgers Creation of Games S
 5. Click on trucks (the white dots) to heal them!
 6. Purple circles are your package's destination.
 
+## Related Links
+ - https://novial.itch.io/deliverymanager
+ - https://www.pygame.org/project/5629/8169
+
 ## Build from Source
 1. Install the [Python 3.10](https://python.org/) or newer
 2. Run `pip install pygame==2.1.3.dev8`
