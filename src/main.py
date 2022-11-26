@@ -95,7 +95,7 @@ def add_package():
     delivery_orders.append(
         Package(
             cost,
-            round(cost * min(random.random(), 0.3), 2),
+            round(cost * min(random.random(), 0.9), 2),
             random.choice(temp_nodes),
             is_fragile=fragile,
             max_dist=random.randint(*FAST_SHIPPING_RANGE)
