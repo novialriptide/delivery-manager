@@ -5,6 +5,8 @@
 A delivery management simulator where you must manage packages and delivery trucks.\
 This video game was created in under 4 days for the [Rutgers Creation of Games Society's Scarlet Game Jam](https://itch.io/jam/scarlet-game-jam-fall-2022).
 
+Pygame Powered
+
 ## How to play
 1. You can also click and drag the destinations!
 2. You got _x_ amount of time to make _x_ amount of money!
