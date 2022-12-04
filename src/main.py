@@ -359,7 +359,7 @@ while True:
             total_dist_str = f"(Total Dist: {int(total_dist)})"
 
         bal_text, bal_rect = size40font.render(
-            f"Balance: ${round(balance, 2)} {gas_loss_str}", (255, 255, 255)
+            f"Balance: ${round(balance, 2)} (Goal: ${MONEY_GOAL}) {gas_loss_str}", (255, 255, 255)
         )
         screen.blit(bal_text, (25, 25))
         gas_text, gas_rect = size40font.render(
