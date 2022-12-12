@@ -33,6 +33,16 @@ Pygame Powered
 
 </details>
 
+## Scarlet Game Jam Images
+<details>
+<summary>Click to view images</summary>
+
+![image info](/images/irl_img1.jpg)
+![image info](/images/irl_img2.jpg)
+![image info](/images/irl_img3.jpg)
+
+</details>
+
 ## Credits
  - All programming has been done by [Andrew Hong](https://github.com/novialriptide)
  - pygame by [the pygame contributing community](https://github.com/pygame/pygame)
